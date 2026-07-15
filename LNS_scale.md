@@ -8,3 +8,6 @@
 | 80 – 89 | Great |
 | 90 – 99 | Outstanding |
 | 100 | Beyond Perfection |
+
+> [!NOTE]
+> A score below 50 doesn't necessarily mean the project/product is terrible; it's just a personal assessment.
