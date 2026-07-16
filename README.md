@@ -11,4 +11,4 @@ We host this project on Github Pages, so you can access it here.
 
 ## License 
 
-MIT
+All rights reserved
