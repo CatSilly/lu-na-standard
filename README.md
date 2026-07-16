@@ -7,7 +7,7 @@
 
 ## Website
 
-We host this project on Github Pages, so you can access it here.
+We host this project on Github Pages, so you can access it [here](https://catsilly.github.io/Lu-Na-standard/)
 
 ## License 
 
