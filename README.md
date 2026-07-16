@@ -1,4 +1,7 @@
-# Lu/Na-standard
+> [!IMPORTANT]
+> The extremely negative/positive reviews are not malicious; they are all personal assessments based on LNS (Lu/Na standard).
+
+# Lu/Na standard
 
 "Lu/Na standard" is a project that specializes in evaluating products/projects based on its own standards.
 
