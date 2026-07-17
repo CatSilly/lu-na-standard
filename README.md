@@ -1,14 +1,28 @@
+# Lu/Na Standard
+
 > [!IMPORTANT]
-> The extremely negative/positive reviews are not malicious; they are all personal assessments based on LNS (Lu/Na standard).
+> A score that is too good or too bad doesn't necessarily mean it's an attack or praise, as it's a matter of personal opinion.
 
-# Lu/Na standard
+A personal evaluation standard used to assess all products/projects that the evaluator finds
 
-"Lu/Na standard" is a project that specializes in evaluating products/projects based on its own standards.
+## Features
 
-## Website
+- Scroll to find reviews.
+- Display the number of LNS points (in the product) that the project has achieved.
+- Users can select search tags based on their desired topic.
 
-We host this project on Github Pages, so you can access it [here](https://catsilly.github.io/Lu-Na-standard/)
+## Usage
+
+You don't need to download anything because LNS runs directly on the web; access it [here](https://catsilly.github.io/Lu-Na-standard/).
+
+## Q&A
+> Q: How long does it take for a product to be found and reviewed?
+>> A: Based on popularity or we actively search for.
+
+> Q: Can I submit my project/product?
+>> A: We don't allow it, but I can find your product if the community suggests it.
 
 ## License 
 
-All rights reserved
+All right reversed
+
