@@ -24,5 +24,5 @@ You don't need to download anything because LNS runs directly on the web; access
 
 ## License 
 
-All right reversed
-
+All rights reversed
+ 
