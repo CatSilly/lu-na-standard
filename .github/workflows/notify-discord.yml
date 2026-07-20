@@ -1,0 +1,106 @@
+name: Notify Discord on new reviews
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/data.json"
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo (with history for diff)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Detect newly added reviews
+        id: diff
+        run: |
+          set -e
+
+          # Lấy nội dung data.json ở commit trước và commit hiện tại
+          git show HEAD^:docs/data.json > old_data.json 2>/dev/null || echo '{"reviews":[]}' > old_data.json
+          cp docs/data.json new_data.json
+
+          python3 << 'PY'
+          import json
+
+          with open("old_data.json") as f:
+              old = json.load(f)
+          with open("new_data.json") as f:
+              new = json.load(f)
+
+          old_ids = {r["id"] for r in old.get("reviews", [])}
+          new_reviews = new.get("reviews", [])
+
+          added = [r for r in new_reviews if r["id"] not in old_ids]
+
+          with open("added_reviews.json", "w") as f:
+              json.dump(added, f)
+
+          with open("has_changes.txt", "w") as f:
+              f.write("true" if added else "false")
+          PY
+
+          {
+            echo "has_changes=$(cat has_changes.txt)"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Send Discord notification
+        if: steps.diff.outputs.has_changes == 'true'
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          PAGES_BASE_URL: ${{ vars.PAGES_BASE_URL }}
+        run: |
+          python3 << 'PY'
+          import json
+          import os
+
+          with open("added_reviews.json") as f:
+              added = json.load(f)
+
+          MAX_OVERVIEW_FIELDS = 5  # số trường đầu tiên trong Overview cần lấy
+          base_url = os.environ.get("PAGES_BASE_URL", "").rstrip("/")
+
+          embeds = []
+          for r in added:
+              status = "🔵 Under review" if r.get("status") == "reviewing" else "✅ Reviewed"
+
+              info = r.get("info") or {}
+              fields = [
+                  {"name": k, "value": str(v), "inline": True}
+                  for k, v in list(info.items())[:MAX_OVERVIEW_FIELDS]
+              ]
+              fields.insert(0, {"name": "Status", "value": status, "inline": True})
+              fields.insert(0, {"name": "Score", "value": f"{r.get('score')}/100", "inline": True})
+
+              embed = {
+                  "title": r.get("title"),
+                  "color": 3447003,
+                  "fields": fields,
+                  "footer": {"text": f"Category: {r.get('category', 'N/A')}"},
+              }
+              if base_url:
+                  embed["url"] = f"{base_url}/product.html?id={r.get('id')}"
+
+              embeds.append(embed)
+
+          payload = {
+              "content": "**New product/project just got review!**",
+              "embeds": embeds[:10],  # Discord giới hạn tối đa 10 embed / message
+          }
+
+          with open("discord_payload.json", "w") as f:
+              json.dump(payload, f)
+          PY
+
+          curl -sf -H "Content-Type: application/json" \
+            -d @discord_payload.json \
+            "$DISCORD_WEBHOOK_URL"
+
+      - name: No new reviews
+        if: steps.diff.outputs.has_changes != 'true'
+        run: echo "data.json thay đổi nhưng không có review mới (có thể chỉ là cập nhật hoặc xoá)."
