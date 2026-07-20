@@ -6,6 +6,12 @@ on:
       - main
     paths:
       - "docs/data.json"
+  workflow_dispatch:
+    inputs:
+      test_mode:
+        description: "Gửi thử embed test tới Discord (bỏ qua bước diff)"
+        type: boolean
+        default: true
 
 jobs:
   notify:
@@ -20,6 +26,28 @@ jobs:
         id: diff
         run: |
           set -e
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.test_mode }}" = "true" ]; then
+            echo "Test mode: dùng dữ liệu review giả để kiểm tra Discord embed."
+            cat > added_reviews.json << 'JSON'
+          [
+            {
+              "id": "test-product",
+              "title": "Test Product (manual trigger)",
+              "category": "game",
+              "score": 88,
+              "status": "reviewing",
+              "info": {
+                "Creator": "Sample Studio",
+                "Game genre": "Sample Genre",
+                "Platform": "PC, Mobile"
+              }
+            }
+          ]
+          JSON
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
 
           # Lấy nội dung data.json ở commit trước và commit hiện tại
           git show HEAD^:docs/data.json > old_data.json 2>/dev/null || echo '{"reviews":[]}' > old_data.json
