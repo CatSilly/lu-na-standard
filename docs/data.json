@@ -1,1 +1,54 @@
-{"categories":[{"id":"game","label":"Game"}],"reviews":[{"id":"mindos","title":"Mindos","category":"game","score":50,"date":"2026-07-15","description":"Very fun game","info":{"Creator":"Luna","Game genre":"Tower Defense + Factory"},"lns_version":"v1.0"},{"id":"rebel-inc","title":"Rebel Inc","category":"game","score":75,"date":"2026-07-19","description":"This is one of my favorite games by Ndemic Creations.\n\nWhen I finally completed a playthrough on Brutal difficulty—the highest difficulty available in the free version—it genuinely felt like I'd just won a real battle. The sense of accomplishment was incredible.\n\nEarlier on, though, I struggled because I hadn't taken the time to learn the game's tactics and strategies, so I kept losing on the later maps.\n\nEven so, Rebel Inc. remains one of my favorite games, right after Plague Inc., because the two games have completely different art styles while both offering unique and engaging gameplay.","info":{"Company (By)":"Ndemic Creation","Type":"Simulator","Platform":"Computer, Mobile","Platform (reviewer)":"Mobile","Premium/DLC":"No"},"lns_version":"v1.0"}]}
+{
+  "categories": [
+    {
+      "id": "game",
+      "label": "Game"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "mindos",
+      "title": "Mindos",
+      "category": "game",
+      "score": 50,
+      "date": "2026-07-15",
+      "description": "Very fun game",
+      "info": {
+        "Creator": "Luna",
+        "Game genre": "Tower Defense + Factory"
+      },
+      "lns_version": "v1.0"
+    },
+    {
+      "id": "rebel-inc",
+      "title": "Rebel Inc",
+      "category": "game",
+      "score": 75,
+      "date": "2026-07-19",
+      "description": "This is one of my favorite games by Ndemic Creations.\n\nWhen I finally completed a playthrough on Brutal difficulty—the highest difficulty available in the free version—it genuinely felt like I'd just won a real battle. The sense of accomplishment was incredible.\n\nEarlier on, though, I struggled because I hadn't taken the time to learn the game's tactics and strategies, so I kept losing on the later maps.\n\nEven so, Rebel Inc. remains one of my favorite games, right after Plague Inc., because the two games have completely different art styles while both offering unique and engaging gameplay.",
+      "info": {
+        "Company (By)": "Ndemic Creation",
+        "Type": "Simulator",
+        "Platform": "Computer, Mobile",
+        "Platform (reviewer)": "Mobile",
+        "Premium/DLC": "No"
+      },
+      "lns_version": "v1.0"
+    },
+    {
+      "id": "tiny-desires",
+      "title": "Tiny Desires",
+      "category": "game",
+      "score": 70,
+      "date": "2026-07-20",
+      "description": "This is an excellent game to kill time, thanks to its minimalist yet incredibly addictive gameplay.\n\nThe core gameplay loop is highly accessible: you just need to drag the matching items to the creature based on the given conditions.\n\nNotably, the game is very well-optimized, allowing lower-end devices to enjoy a smooth experience.",
+      "info": {
+        "Creator (by)": "Kanota Zon (know as Simla)",
+        "Type": "Puzzle, Strategy",
+        "Make with": "Defold",
+        "Store (Itch)": "https://kanotazon.itch.io/tiny-desires"
+      },
+      "lns_version": "v1.0"
+    }
+  ]
+}
