@@ -1,0 +1,45 @@
+name: General Issue
+description: Report a bug, suggest an enhancement, or submit other issues.
+title: "[Issue]: "
+labels: []
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > For the project/repo owner only
+
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Type
+      description: Select the type of this issue.
+      options:
+        - Bug
+        - Documentation
+        - Enhancement
+        - Feature Request
+        - Question
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: describe
+    attributes:
+      label: Describe
+      description: Describe the issue or suggestion in detail.
+      placeholder: |
+        Headpat a cat on 11:00 if the bug is too heavy...
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: Additional notes
+      description: Add any extra information if needed. Leave empty if not applicable.
+      placeholder: Write if have, if not just leave this blank.
+    validations:
+      required: false
