@@ -1,3 +1,4 @@
+[![Pages build](https://github.com/CatSilly/Lu-Na-standard/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/CatSilly/Lu-Na-standard/actions/workflows/pages/pages-build-deployment)
 # Lu/Na Standard
 
 > [!IMPORTANT]
