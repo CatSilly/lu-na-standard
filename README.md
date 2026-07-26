@@ -1,6 +1,6 @@
-[![Pages build](https://github.com/CatSilly/Lu-Na-standard/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/CatSilly/Lu-Na-standard/actions/workflows/pages/pages-build-deployment)
 # Lu/Na Standard
-
+[![Pages build](https://github.com/CatSilly/Lu-Na-standard/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/CatSilly/Lu-Na-standard/actions/workflows/pages/pages-build-deployment)
+[![CodeQL](https://github.com/CatSilly/Lu-Na-standard/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/CatSilly/Lu-Na-standard/actions/workflows/github-code-scanning/codeql)
 > [!IMPORTANT]
 > A score that is too good or too bad doesn't necessarily mean it's an attack or praise, as it's a matter of personal opinion.
 
