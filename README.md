@@ -23,7 +23,9 @@ You don't need to download anything because LNS runs directly on the web; access
 > Q: Can I submit my project/product?
 >> A: We don't allow it, but I can find your product if the community suggests it.
 
-## License 
+## License
 
-All rights reserved 
+This project is proprietary and is **not open source**.
+
+[All rights reserved](LICENSE). No permission is granted to use, copy, modify, or distribute this software without explicit written permission from the copyright holder.
  
