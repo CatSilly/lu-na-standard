@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo (with history for diff)
-        uses: actions/checkout@v7
+        uses: actions/checkout@v4
         with:
           fetch-depth: 2
 
@@ -53,8 +53,8 @@ jobs:
           fi
 
           # Lấy nội dung data.json ở commit trước và commit hiện tại
-          git show HEAD^:docs/data.json > old_data.json 2>/dev/null || echo '{"reviews":[]}' > old_data.json
-          cp docs/data.json new_data.json
+          git show HEAD^:docs/json/data.json > old_data.json 2>/dev/null || echo '{"reviews":[]}' > old_data.json
+          cp docs/json/data.json new_data.json
 
           python3 << 'PY'
           import json
@@ -98,7 +98,7 @@ jobs:
 
           embeds = []
           for r in added:
-              status = "🔵 Under review" if r.get("status") == "reviewing" else "✅ Reviewed"
+              status = "Under review" if r.get("status") == "reviewing" else "Reviewed"
 
               info = r.get("info") or {}
               fields = [
