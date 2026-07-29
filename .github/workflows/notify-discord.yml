@@ -12,6 +12,10 @@ on:
         description: "Gửi thử embed test tới Discord (bỏ qua bước diff)"
         type: boolean
         default: true
+      review_id:
+        description: "ID của review cần thông báo thủ công (bỏ trống nếu dùng test_mode)"
+        type: string
+        default: ""
 
 permissions:
   contents: read
@@ -29,6 +33,31 @@ jobs:
         id: diff
         run: |
           set -e
+
+          if [ -n "${{ inputs.review_id }}" ]; then
+            echo "Manual mode: tìm review có id = ${{ inputs.review_id }} trong data.json thật."
+            python3 << 'PY'
+          import json
+          import sys
+
+          review_id = "${{ inputs.review_id }}"
+
+          with open("docs/json/data.json") as f:
+              data = json.load(f)
+
+          reviews = data.get("reviews", [])
+          match = next((r for r in reviews if str(r.get("id")) == review_id), None)
+
+          if match is None:
+              print(f"::error::Không tìm thấy review với id '{review_id}' trong data.json")
+              sys.exit(1)
+
+          with open("added_reviews.json", "w") as f:
+              json.dump([match], f)
+          PY
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
 
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.test_mode }}" = "true" ]; then
             echo "Test mode: dùng dữ liệu review giả để kiểm tra Discord embed."
