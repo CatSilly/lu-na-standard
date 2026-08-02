@@ -1,0 +1,25 @@
+name: IndexNow Submit
+
+on:
+  push:
+    branches: [ main ]
+
+permissions: {}
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit URLs to IndexNow
+        run: |
+          curl -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "host": "catsilly.github.io",
+              "key": "717b9cb35800e130949432a18d0bd94227ac050d",
+              "keyLocation": "https://catsilly.github.io/lu-na-standard/docs/717b9cb35800e130949432a18d0bd94227ac050d.txt",
+              "urlList": [
+                "https://catsilly.github.io/lu-na-standard/index.html",
+                "https://catsilly.github.io/lu-na-standard/product.html"
+              ]
+            }'
