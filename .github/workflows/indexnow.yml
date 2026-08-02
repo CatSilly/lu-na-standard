@@ -4,6 +4,8 @@ on:
   push:
     branches: [ main ]
 
+permissions: {}
+
 jobs:
   submit:
     runs-on: ubuntu-latest
