@@ -3,6 +3,9 @@ description: A (personal) rating system
 baseurl: "/lu-na-standard"
 url: "https://catsilly.github.io"
 
+plugins:
+  - jekyll-sitemap
+
 exclude:
   - README.md
   - Gemfile
