@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://catsilly.github.io/Lu-Na-standard/sitemap.xml
+Sitemap: https://catsilly.github.io/Lu-Na-standard/sitemap.xml.txt
