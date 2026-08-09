@@ -14,7 +14,7 @@ A personal evaluation standard used to assess all products/projects that the eva
 
 ## Usage
 
-You don't need to download anything because LNS runs directly on the web; access it [here](https://catsilly.github.io/Lu-Na-standard/).
+You don't need to download anything because LNS runs directly on the web; access it [here](https://catsilly.github.io/lu-na-standard/).
 
 ## Q&A
 > Q: How long does it take for a product to be found and reviewed?
