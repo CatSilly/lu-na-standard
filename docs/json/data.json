@@ -11,19 +11,6 @@
   ],
   "reviews": [
     {
-      "id": "mindos",
-      "title": "Mindos",
-      "category": "game",
-      "score": 50,
-      "date": "2026-07-15",
-      "description": "Very fun game",
-      "info": {
-        "Creator": "Luna",
-        "Game genre": "Tower Defense + Factory"
-      },
-      "lns_version": "v1.0"
-    },
-    {
       "id": "rebel-inc",
       "title": "Rebel Inc",
       "category": "game",
@@ -88,6 +75,22 @@
         "Download (Itch.io)": "https://lunacute.itch.io/lfccer-bcber"
       },
       "lns_version": "v1.0"
+    },
+    {
+      "id": "geometry-dash",
+      "title": "Geometry Dash",
+      "category": "game",
+      "score": 88,
+      "date": "2026-09-14",
+      "description": "This is one of the games that has been connected to the history of my YouTube channel the most. Sometimes, I get mad at it, but because of the goals I set for myself in this game, I always come back to it like we were never separated.\n\nI started playing Geometry Dash around 2020. At that time, I didnt have enough money to buy the full version of the game, so I decided to play the demo version instead. Then, around July 28, 2024, I started uploading videos related to Geometry Dash, even though my skill was still pretty bad. I still remember that the game wasn't as popular as it is now. It gave my channel a pretty huge number of subscribers and quite a lot of viewers (although they werent loyal enough).\n\nHowever, developing games and building my own Studio took away a lot of my time, so I couldnt play GD as much as before. At the same time, I also got tired of playing the game I loved, which sounds like a very stupid problem when you think about it. So I decided to leave it behind and focus on other things.\n\nEven after leaving the game, I still kept up with the community and its news quite often. And I guess that says something: I still havent escaped from this game.\n\nIn general, Geometry Dash is a game that is really worth trying for people who love rhythm-based games... and people who enjoy punching their desks more often.",
+      "info": {
+        "Published by": "RobTop Games",
+        "Developed by": "Robert Topala",
+        "Type": "Rhythm-based",
+        "Official game website": "https://www.geometrydash.com/",
+        "Wiki Source": "https://en.wikipedia.org/wiki/Geometry_Dash"
+      },
+      "lns_version": "v1.1"
     }
   ]
 }
