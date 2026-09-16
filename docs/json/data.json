@@ -30,7 +30,7 @@
       "id": "tiny-desires",
       "title": "Tiny Desires",
       "category": "game",
-      "score": 70,
+      "score": 79,
       "date": "2026-07-20",
       "description": "This is an excellent game to kill time, thanks to its minimalist yet incredibly addictive gameplay.\n\nThe core gameplay loop is highly accessible: you just need to drag the matching items to the creature based on the given conditions.\n\nNotably, the game is very well-optimized, allowing lower-end devices to enjoy a smooth experience.",
       "info": {
@@ -39,8 +39,7 @@
         "Make with": "Defold",
         "Store (Itch)": "https://kanotazon.itch.io/tiny-desires"
       },
-      "lns_version": "v1.0",
-      "status": "reviewing"
+      "lns_version": "v1.1"
     },
     {
       "id": "lensko-letsgo",
