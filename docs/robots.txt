@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://catsilly.github.io/lu-na-standard/sitemap.xml
