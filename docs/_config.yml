@@ -1,9 +1,0 @@
-title: Lu/Na Standard
-description: A (personal) rating system
-baseurl: ""
-url: "https://catsilly.github.io"
-
-exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
