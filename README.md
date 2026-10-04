@@ -10,7 +10,7 @@ I created this standard because the internet has a lot of low-quality content. I
 
 ## Rating
 
-See the [rating scale](LNS_scale.md)
+See the [rating scale](LNS_scale.md).
 
 ## Reviews
 
