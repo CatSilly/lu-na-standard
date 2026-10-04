@@ -1,31 +1,42 @@
 # Lu/Na Standard
-[![Pages build](https://github.com/CatSilly/Lu-Na-standard/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/CatSilly/Lu-Na-standard/actions/workflows/pages/pages-build-deployment)
-[![CodeQL](https://github.com/CatSilly/Lu-Na-standard/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/CatSilly/Lu-Na-standard/actions/workflows/github-code-scanning/codeql)
-> [!IMPORTANT]
-> A score that is too good or too bad doesn't necessarily mean it's an attack or praise, as it's a matter of personal opinion.
 
-A personal evaluation standard used to assess all products/projects that the evaluator finds
+> A rating system based on personal standards.
 
-## Features
+[Explanation video](https://youtu.be/YNwpWy15AX8) | [Website](https://catsilly.github.io/lu-na-standard/)
 
-- Scroll to find reviews.
-- Display the number of LNS points (in the product) that the project has achieved.
-- Users can select search tags based on their desired topic.
+## Why?
 
-## Usage
+I created this standard because the internet has a lot of low-quality content. Instead of trying to fix it, I decided to focus on reviewing the things I find.
 
-You don't need to download anything because LNS runs directly on the web; access it [here](https://catsilly.github.io/lu-na-standard/).
+## Rating
 
-## Q&A
-> Q: How long does it take for a product to be found and reviewed?
->> A: Based on popularity or we actively search for.
+See the [rating scale](LNS_scale.md)
 
-> Q: Can I submit my project/product?
->> A: We don't allow it, but I can find your product if the community suggests it.
+## Reviews
+
+All reviews are available on the [website](https://catsilly.github.io/lu-na-standard/).
+
+## Disclaimer
+
+This is a personal rating system. It does not represent an official or universal standard. Use it as a reference.
+
+## FAQ
+
+### How long does the review take?
+
+There is no fixed time. It depends on the product and how long it takes to understand its user experience.
+
+### Can I submit something for review?
+
+Not yet. I may add a submission method in the future.
+
+## Roadmap
+
+- [ ] 10 reviews.
+- [ ] 50 reviews.
+- [ ] 100 reviews.
 
 ## License
 
-This project is proprietary and is **not open source**.
+All rights reserved.
 
-[All rights reserved](LICENSE). No permission is granted to use, copy, modify, or distribute this software without explicit written permission from the copyright holder.
- 
