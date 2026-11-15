@@ -38,5 +38,4 @@ Not yet. I may add a submission method in the future.
 
 ## License
 
-All rights reserved.
-
+This project is **not** open-source, the primary purpose of this repository is to publish complete websites. See more licensing information at [LICENSE](LICENSE) file.
