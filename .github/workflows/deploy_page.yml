@@ -1,0 +1,91 @@
+name: Deploy site archive to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+  workflow_dispatch:
+    inputs:
+      archive:
+        description: "Path to the site archive (.zip or .7z)"
+        required: false
+        default: "site/site.7z"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Extract archive
+        env:
+          ARCHIVE: ${{ inputs.archive || 'site/site.7z' }}
+        run: |
+          set -euo pipefail
+          shopt -s dotglob nullglob
+
+          if [ ! -f "$ARCHIVE" ]; then
+            echo "::error::Archive not found: $ARCHIVE"
+            exit 1
+          fi
+
+          rm -rf _site && mkdir _site
+
+          case "${ARCHIVE,,}" in
+            *.zip)
+              unzip -q "$ARCHIVE" -d _site
+              ;;
+            *.7z)
+              if ! command -v 7z >/dev/null 2>&1; then
+                sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
+              fi
+              7z x -y -o_site "$ARCHIVE" >/dev/null
+              ;;
+            *)
+              echo "::error::Unsupported archive type (use .zip or .7z)"
+              exit 1
+              ;;
+          esac
+
+          # Remove macOS junk
+          rm -rf _site/__MACOSX
+
+          # If the archive contains a single top-level folder, use its contents as the site root
+          entries=(_site/*)
+          if [ "${#entries[@]}" -eq 1 ] && [ -d "${entries[0]}" ]; then
+            inner="${entries[0]}"
+            mv "$inner"/* _site/
+            rmdir "$inner"
+          fi
+
+          # Disable Jekyll processing
+          touch _site/.nojekyll
+
+          echo "Site contents:"
+          ls -la _site
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
