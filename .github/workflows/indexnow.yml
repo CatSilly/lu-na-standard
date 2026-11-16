@@ -20,6 +20,6 @@ jobs:
               "keyLocation": "https://catsilly.github.io/lu-na-standard/717b9cb35800e130949432a18d0bd94227ac050d.txt",
               "urlList": [
                 "https://catsilly.github.io/lu-na-standard/index.html",
-                "https://catsilly.github.io/lu-na-standard/product.html"
+                "https://catsilly.github.io/lu-na-standard/review/"
               ]
             }'
