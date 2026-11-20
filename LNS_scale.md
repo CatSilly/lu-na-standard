@@ -1,5 +1,7 @@
 # LNS Scoring System
 
+Apply for LNS v1.2 (lastest), this table can change anytime.
+
 | Score | Rating |
 |------:|--------|
 | < 50 | Terrible |
